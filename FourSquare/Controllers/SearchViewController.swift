@@ -38,15 +38,23 @@ class SexySearchViewController: UIViewController {
         return searchBar
     }()
     
-    lazy var hamBoogerMenYou: UIButton = {
+    lazy var hamBoogerMenYouButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "line.horizontal.3"), for: .normal)
+        
+        button.setImage(UIImage(systemName: "list.dash"), for: .normal)
+        view.addSubview(button)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        //              listButton.addTarget(self, action: #selector(listButtonPressed), for: .touchUpInside)
+        button.backgroundColor = .white
+        button.tintColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+        return button
     }()
     
     private func setConstraints(){
         setMapConstraints()
         setVenueSearchBarConstraints()
         setLocationSearchBarConstraints()
+        setButtonConstraints()
     }
     
     private func setVenueSearchBarConstraints() {
@@ -62,6 +70,17 @@ class SexySearchViewController: UIViewController {
             eroticLocationSearchBar.topAnchor.constraint(equalTo: eroticVenueSearchBar.bottomAnchor),
             eroticLocationSearchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             eroticLocationSearchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+    }
+    
+    private func setButtonConstraints() {
+        hamBoogerMenYouButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            hamBoogerMenYouButton.topAnchor.constraint(equalTo: eroticVenueSearchBar.topAnchor),
+            hamBoogerMenYouButton.leadingAnchor.constraint(equalTo: eroticVenueSearchBar.trailingAnchor),
+            hamBoogerMenYouButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            hamBoogerMenYouButton.heightAnchor.constraint(equalTo: eroticVenueSearchBar.heightAnchor),
         ])
     }
     private func setMapConstraints() {
