@@ -10,6 +10,7 @@
 		972E750C23839EF6009776A5 /* SexyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972E750B23839EF6009776A5 /* SexyDetailViewController.swift */; };
 		972E750E23845EB0009776A5 /* SexyCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972E750D23845EB0009776A5 /* SexyCreateViewController.swift */; };
 		973B1FA62383454700EE9B07 /* SexyCollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973B1FA52383454700EE9B07 /* SexyCollectionsViewController.swift */; };
+		976F307B23864CE9009C0880 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976F307A23864CE9009C0880 /* Secrets.swift */; };
 		976FFD8C238377AF004B9ACA /* FourSquareAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976FFD8B238377AF004B9ACA /* FourSquareAPIClient.swift */; };
 		976FFD90238383F8004B9ACA /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976FFD8F238383F8004B9ACA /* SearchCollectionViewCell.swift */; };
 		9787D0362380B07C00A1D8AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9787D0352380B07C00A1D8AB /* AppDelegate.swift */; };
@@ -28,6 +29,7 @@
 		972E750B23839EF6009776A5 /* SexyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SexyDetailViewController.swift; sourceTree = "<group>"; };
 		972E750D23845EB0009776A5 /* SexyCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SexyCreateViewController.swift; sourceTree = "<group>"; };
 		973B1FA52383454700EE9B07 /* SexyCollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SexyCollectionsViewController.swift; sourceTree = "<group>"; };
+		976F307A23864CE9009C0880 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		976FFD8B238377AF004B9ACA /* FourSquareAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSquareAPIClient.swift; sourceTree = "<group>"; };
 		976FFD8F238383F8004B9ACA /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		9787D0322380B07C00A1D8AB /* FourSquare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FourSquare.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +82,7 @@
 				9787D0492380B0B500A1D8AB /* Helpers */,
 				9787D0352380B07C00A1D8AB /* AppDelegate.swift */,
 				9787D0372380B07C00A1D8AB /* SceneDelegate.swift */,
+				976F307A23864CE9009C0880 /* Secrets.swift */,
 				9787D03E2380B08100A1D8AB /* Assets.xcassets */,
 				9787D0402380B08100A1D8AB /* LaunchScreen.storyboard */,
 				9787D0432380B08100A1D8AB /* Info.plist */,
@@ -205,6 +208,7 @@
 				97C2DD182384633800F15BBF /* CreatedCollectionViewCell.swift in Sources */,
 				972E750C23839EF6009776A5 /* SexyDetailViewController.swift in Sources */,
 				9787D0522380B12900A1D8AB /* AppError.swift in Sources */,
+				976F307B23864CE9009C0880 /* Secrets.swift in Sources */,
 				972E750E23845EB0009776A5 /* SexyCreateViewController.swift in Sources */,
 				9787D0362380B07C00A1D8AB /* AppDelegate.swift in Sources */,
 				9787D0502380B11700A1D8AB /* PersistenceHelper.swift in Sources */,

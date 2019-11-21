@@ -10,15 +10,10 @@ import Foundation
 
 class FourSquareAPIClient {
     static let manager = FourSquareAPIClient()
-    
-    let clientSecret = "3OOKRE2BKKVWC0NITLQA2YXNDSCI0UXG4UMGV4ZHGOKVKRB0"
-    
-    let clientID = "UQB5TPYOAZLSRHOV2FJZWDKSPK3SBUPFHLHOOIGOSCKEZJBF"
-    
-    
+        
     func getVenueData(query:String,lat: Double, long: Double,completionHandler:@escaping(Result<[Venue],AppError>)-> Void) {
         
-        let url = "https://api.foursquare.com/v2/venues/search?client_id=\(clientID)&client_secret=\(clientSecret)&ll=\(lat),\(long)&query=\(query.lowercased())&v=20191118"
+        let url = "https://api.foursquare.com/v2/venues/search?client_id=\(Secrets.clientID)&client_secret=\(Secrets.clientSecret)&ll=\(lat),\(long)&query=\(query.lowercased())&v=20191118"
         
         guard let urlStr = URL(string: url) else {
             completionHandler(.failure(.badURL))
