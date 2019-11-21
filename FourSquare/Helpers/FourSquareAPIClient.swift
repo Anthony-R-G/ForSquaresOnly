@@ -16,7 +16,7 @@ class FourSquareAPIClient {
     let clientID = "UQB5TPYOAZLSRHOV2FJZWDKSPK3SBUPFHLHOOIGOSCKEZJBF"
     
     
-    func getVenueData(query:String,lat: Double, long: Double,completionHandler:@escaping(Result<[Venues],AppError>)-> Void) {
+    func getVenueData(query:String,lat: Double, long: Double,completionHandler:@escaping(Result<[Venue],AppError>)-> Void) {
         
         let url = "https://api.foursquare.com/v2/venues/search?client_id=\(clientID)&client_secret=\(clientSecret)&ll=\(lat),\(long)&query=\(query.lowercased())&v=20191118"
         

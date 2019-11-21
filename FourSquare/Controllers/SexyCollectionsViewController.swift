@@ -31,7 +31,7 @@ class SexyCollectionsViewController: UIViewController {
         navigationController?.pushViewController(createVC, animated: true)
     }
     
-    var createdVenues = [Venues]() 
+    var createdVenues = [Venue]() 
     
     override func viewDidLoad() {
         super.viewDidLoad()

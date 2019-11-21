@@ -71,9 +71,9 @@ class SexySearchViewController: UIViewController {
     //MARK: -- Properties
     let locationManager = CLLocationManager()
     
-    var venues = [Venues]() {
+    var venues = [Venue]() {
         didSet {
-            
+            createAnnotations(from: venues)
             mapCollectionView.reloadData()
             
         }
@@ -84,6 +84,8 @@ class SexySearchViewController: UIViewController {
             eroticLocationSearchBar.placeholder = userLocation
         }
     }
+    
+     var userVenue = ""
     
     
     
@@ -140,6 +142,17 @@ class SexySearchViewController: UIViewController {
             case .failure(let error):
                 print(error)
             }
+        }
+    }
+    private func createAnnotations(from venues: [Venue]) {
+        let annotations = mapView.annotations
+        mapView.removeAnnotations(annotations)
+        
+        for venue in venues {
+            let newAnnotation = MKPointAnnotation()
+            newAnnotation.title = venue.name
+            newAnnotation.coordinate = CLLocationCoordinate2D(latitude: venue.location.lat, longitude: venue.location.lng)
+            mapView.addAnnotation(newAnnotation)
         }
     }
     
@@ -212,12 +225,28 @@ extension SexySearchViewController {
 
 
 extension SexySearchViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
-            let region = MKCoordinateRegion(center: location.coordinate, span: span)
-            mapView.setRegion(region, animated: true)
+   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let geocoder = CLGeocoder()
+        
+        geocoder.reverseGeocodeLocation(locations[0]) { (placemarks, error) in
+            
+            guard let existingPlacemarks = placemarks else {
+                print(error as Any)
+                return
+            }
+            for placemark in existingPlacemarks {
+                let city = placemark.locality
+                let state = placemark.administrativeArea
+                
+                guard let userCity = city, let userState = state else {return}
+                
+                self.userLocation = "\(userCity), \(userState)"
+            }
         }
+        
+        mapView.showsUserLocation = true
+        mapView.userTrackingMode = .follow
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -241,9 +270,11 @@ extension SexySearchViewController: UISearchBarDelegate {
         switch searchBar.tag {
         case 0:
             guard let venue = searchBar.text else { return }
-            getCoordinateFromVenue(location: userLocation)
+            userVenue = venue
+            getCoordinateFromVenue(location: userVenue)
         case 1:
             guard let location = searchBar.text else { return }
+            userLocation = location
             getCoordinateFromVenue(location: userLocation)
         default: ()
         }
@@ -268,3 +299,4 @@ extension SexySearchViewController: UICollectionViewDelegate, UICollectionViewDa
         present(detailVC, animated: true, completion: nil)
     }
 }
+

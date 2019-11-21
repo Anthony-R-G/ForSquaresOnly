@@ -10,7 +10,7 @@ import UIKit
 
 class SexyDetailViewController: UIViewController {
 
-    var venue: Venues!
+    var venue: Venue!
     
     override func viewDidLoad() {
         super.viewDidLoad()

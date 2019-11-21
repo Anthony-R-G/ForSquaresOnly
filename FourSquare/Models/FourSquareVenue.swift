@@ -12,9 +12,9 @@ struct FourSquareVenues: Codable {
     let response: ResponseWrapper
 }
 struct ResponseWrapper: Codable {
-    let venues: [Venues]
+    let venues: [Venue]
 }
-struct Venues: Codable {
+struct Venue: Codable {
     let id: String
     let name: String
     let location: Location
