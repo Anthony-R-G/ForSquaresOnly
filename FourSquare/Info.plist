@@ -44,7 +44,7 @@
 		<string>armv7</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>sdadsjhask dand kjasajdhbw jdhb kjsa </string>
+	<string>This app requires your location to show nearby venues.</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
