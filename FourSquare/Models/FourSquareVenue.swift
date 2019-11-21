@@ -1,17 +1,17 @@
 //
-//  FourSquareVenu.swift
+//  FourSquareVenue.swift
 //  FourSquare
 //
-//  Created by Anthony Gonzalez on 11/18/19.
+//  Created by Anthony Gonzalez on 11/19/19.
 //  Copyright © 2019 Antnee. All rights reserved.
 //
 
 import Foundation
 
-struct FourSquareVenue: Codable {
-    let response: Response
+struct FourSquareVenues: Codable {
+    let response: ResponseWrapper
 }
-struct Response: Codable {
+struct ResponseWrapper: Codable {
     let venues: [Venues]
 }
 struct Venues: Codable {
@@ -20,9 +20,8 @@ struct Venues: Codable {
     let location: Location
 }
 struct Location: Codable {
-    let address: String
+    let address: String?
     let lat: Double
     let lng: Double
     let crossStreet: String?
 }
-
